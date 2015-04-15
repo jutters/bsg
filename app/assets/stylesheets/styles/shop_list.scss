@@ -1,0 +1,277 @@
+/***
+  
+  *
+
+  SHOP LIST
+  
+  *
+
+***/
+
+.shop_list{
+	background-color:$white;
+	overflow:hidden;
+
+	.shops{
+		padding: 40px 20px;
+		margin:0 auto;
+		overflow:hidden;
+		text-align:center;
+
+		.signup_box{
+			width: 380px;
+			height: 380px;
+			padding: 160px 20px 0px 20px;
+			background: url(insider_shop_bg.png) center center;
+			background-size: cover;
+			margin: 10px;
+			position:relative;
+			float: left;
+
+			.headline_wrap{
+				.number{
+					font-size: 30px;
+					text-transform: uppercase;
+					@include bold;
+					margin-bottom: 10px;
+				}
+				.headline{
+					font-size: 20px;
+					text-transform: uppercase;
+					@include bold;
+				}
+			}
+			.subline, .headline_wrap{
+				text-align: center;
+				width: 100%;
+			}
+			.subline{
+				margin-top: 120px;
+			}
+
+		}
+
+		.shop{
+			width: 380px;
+			height: 380px;
+			padding: 20px 10px 0px 10px;
+			background-color: $black;
+			cursor: pointer;
+			margin: 10px;
+			position:relative;
+			text-align: center;
+			float: left;
+
+			.shop_name{
+				font-size: 20px;
+				color: $white;
+				text-transform: uppercase;
+				margin-bottom: 5px;
+			}
+
+			.info{
+				width: 360px;
+				height: 60px;
+				position: absolute;
+				bottom:10px;
+				z-index: 10;
+				background-color: $turquois;
+				padding: 2px;
+				
+				.team_thumb{
+					width: 56px;
+					height: 56px;
+					float: left;
+					margin-right: 12px;
+
+					&.team_member_1{
+					background: url(members/team_membder_thumb_1.jpg) center center no-repeat;
+					}
+					&.team_member_2{
+					background: url(members/team_membder_thumb_2.jpg) center center no-repeat;
+					}
+					&.team_member_3{
+					background: url(members/team_membder_thumb_3.jpg) center center no-repeat;
+					}
+				}
+
+				.copy{
+					float: left;
+					text-align: left;
+					.text{
+						margin-top: 10px;
+						margin-bottom: 5px;
+					}
+					.name{
+						font-size: 13px;
+					}
+				}
+			}
+
+			.thumb{
+				width: 340px;
+				height: 310px;
+				position: absolute;
+				left: 20px;
+				bottom:0;
+
+				.overlay{
+					width: 340px;
+					height: 310px;	
+					background: url(shop_overlay.png) center center;
+					position:absolute;
+					bottom:0;
+
+					i{
+						position:absolute;
+						top: 0;
+						right: 10px;
+					}
+				}
+
+			}
+
+			&.insider{
+				background-color:$orange;
+
+				.shop_name{
+					color: $black;
+					@include bold;
+				}
+
+			}
+
+			.marked_badge{
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				right: 0;
+				top: 0;
+
+				i{
+					position: absolute;
+					right: 5px;
+					top: 5px;
+					font-size: 14px;
+					color: $red;
+					z-index: 10;
+				}
+
+				.triangle{
+					width: 0;
+					height: 0;
+					position: absolute;
+					top: 0;
+					right: 0;
+					border-left: 50px solid transparent;
+			  		border-right: 0px solid transparent;
+			  		border-top: 50px solid $white;
+				}
+				
+			}
+
+			.hover{
+				opacity: 0;
+				position:absolute;
+				top: 0;
+				left:0;
+				padding: 17px 30px 0px 30px;
+				font-size: 20px;
+				line-height: 26px;
+				z-index: 100;
+				width: 380px;
+				height: 380px;
+				color: $white;
+				background: url(shop_hover.png) center center repeat-x;
+				transition: opacity 0.35s;
+
+				.shop_name{
+					color: $white;
+				}
+
+				li{
+					@include regular;
+					text-align: center;
+					margin-bottom: 22px;
+				}
+
+				.icon_wrap{
+					margin: 50px auto 30px auto;
+					display: table;
+
+					.icon{
+						width: 30px;
+						height: 30px;
+						float: left;
+						font-size: 16px;
+						text-align: center;
+						line-height: 30px;
+						color: $black;
+						background-color: $white;
+						margin-right: 10px;
+						border: 1px solid $white;
+
+						&:last-child{
+							margin-right: none;
+						}
+
+						&.inactive{
+							border: 1px solid $grey_light;
+							color: $grey_light;
+							background-color:transparent;
+						}
+					}
+				}
+
+				.buttons{
+					position:absolute;
+					bottom:30px;
+
+					a{	
+						width: 150px;
+						color: $white;
+						background-color: transparent;
+						font-size: 14px !important;
+
+						&.shop_link{
+							margin-right: 20px;
+						}
+
+						&.marked{
+							color: $red;
+							border-color: $red;
+
+							&:hover{
+								background-color: $red;
+								color: $black;
+							}
+						}
+
+						&:hover{
+							background-color: $white;
+							color: $black;
+						}
+					}
+
+				}		
+
+			}
+
+			&:hover .hover{
+				opacity: 1;
+			}
+		}
+	}
+
+	.load_more{
+		padding: 0px 20px 100px 20px;
+		margin: 0 auto;
+		display: table;
+
+		.button_black{
+			width: 380px;
+			margin: 0 auto;
+		}
+	}
+
+}

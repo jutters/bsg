@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="no-js">
 <head>
   <title>Bss</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body class='<%= controller.controller_name %>'>
 
-<%= yield %>
+  	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  	<%= csrf_meta_tags %>
+
+	<%= render(partial: "shared/header") %>  
+  
+</head>
+
+<body class='<%= controller.controller_name %> cbp-spmenu-push'>
+
+  <%= yield :layout %>
 
 </body>
+
+<%= render(partial: "shared/footer") %>
+<%= render(partial: "shared/footer_scripts") %>
+
 </html>

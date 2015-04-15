@@ -1,0 +1,42 @@
+/***
+  
+  *
+
+  SHOP SUGGEST
+  
+  *
+
+***/
+
+
+.shop_suggest{
+	width: 100%;
+	background: url(bg_shop_suggest.jpg) center $black;
+	color: $white;
+	padding: 100px 20px;
+
+	p{
+		text-align: center;
+		font-size: 16px;
+		margin-top: 20px;
+		@include regular;
+
+		&.success{
+			color: $turquois;
+			margin-top: 75px;
+		}
+	}
+
+	ul{
+		margin: 60px auto 0 auto;
+		overflow: hidden;
+		display: table;
+
+		li{
+			float: left;
+			&:last-child{
+				margin-right: 0;
+			}
+		}
+	}
+}

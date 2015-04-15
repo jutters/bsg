@@ -3,6 +3,12 @@ require 'test_helper'
 class ShopsControllerTest < ActionController::TestCase
   setup do
     @shop = shops(:one)
+    @update = {
+      name: "TestName",
+      comment: "TestComment",
+      site_url: "Test.url",
+      price_segment: 2
+    }
   end
 
   test "should get index" do
@@ -18,7 +24,7 @@ class ShopsControllerTest < ActionController::TestCase
 
   test "should create shop" do
     assert_difference('Shop.count') do
-      post :create, shop: { comment: @shop.comment, image_url: @shop.image_url, name: @shop.name, site_url: @shop.site_url }
+      post :create, shop: @update
     end
 
     assert_redirected_to shop_path(assigns(:shop))
@@ -35,7 +41,7 @@ class ShopsControllerTest < ActionController::TestCase
   end
 
   test "should update shop" do
-    patch :update, id: @shop, shop: { comment: @shop.comment, image_url: @shop.image_url, name: @shop.name, site_url: @shop.site_url }
+    patch :update, id: @shop, shop: @update
     assert_redirected_to shop_path(assigns(:shop))
   end
 

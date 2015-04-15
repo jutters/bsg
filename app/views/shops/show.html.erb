@@ -4,20 +4,43 @@
   <strong>Name:</strong>
   <%= @shop.name %>
 </p>
-
 <p>
-  <strong>Site url:</strong>
+<strong>Site URL:</strong>
   <%= @shop.site_url %>
 </p>
-
 <p>
-  <strong>Image url:</strong>
-  <%= @shop.image_url %>
+  <%= image_tag @shop.image_url.to_s %>
 </p>
-
 <p>
   <strong>Comment:</strong>
   <%= @shop.comment %>
+</p>
+<p>
+  <strong>Insider Tip:</strong>
+  <%= check_box :shop, :insider_tip, disabled: true %>€
+</p>
+<p>
+  <strong>Price Segment:</strong>
+  <%= check_box :shop, :price_segment_low, disabled: true %>€
+  <%= check_box :shop, :price_segment_middle, disabled: true %>€€
+  <%= check_box :shop, :price_segment_high, disabled: true %>€€€
+</p>
+<p>
+  <strong>Locale:</strong>
+  <%= check_box :shop, :locale_de_shop, disabled: true %>de
+  <%= check_box :shop, :locale_foreign_shop_de_website, disabled: true %>de_site
+  <%= check_box :shop, :locale_foreign_shop_de_delivery, disabled: true %>de_delivery
+</p>
+<p>
+  <strong>Brand Type:</strong>
+  <%= check_box :shop, :brand_type_single, disabled: true %>Single
+  <%= check_box :shop, :brand_type_multi, disabled: true %>Multi
+</p>
+<p>
+  <strong>Shop Type:</strong>
+  <%= check_box :shop, :shop_type_women_fashion, disabled: true %>Women
+  <%= check_box :shop, :shop_type_men_fashion, disabled: true %>Men
+  <%= check_box :shop, :shop_type_interior_design, disabled: true %>Interior
 </p>
 
 <%= link_to 'Edit', edit_shop_path(@shop) %> |

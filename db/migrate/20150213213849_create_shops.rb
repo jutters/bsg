@@ -3,8 +3,7 @@ class CreateShops < ActiveRecord::Migration
     create_table :shops do |t|
       t.string :name
       t.string :site_url
-      t.string :image_url
-      t.text :comment
+      t.text   :comment
 
       t.timestamps
     end

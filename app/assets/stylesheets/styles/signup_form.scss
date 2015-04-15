@@ -1,0 +1,54 @@
+/***
+  
+  *
+
+  SIGNUP FORM
+  
+  *
+
+***/
+
+.signup_form{
+	width:100%;
+	background-color:  $turquois;
+
+	.usp{
+		width: 100%;
+		overflow: hidden;
+		padding:40px 20px 80px 20px;
+
+		li{
+			width: 33.3%;
+			float: left;
+			text-align: center;
+			
+			p{
+				font-size: 16px;
+				line-height: 22px;
+				padding:0 10px;
+			}
+			i{
+				font-size: 30px;
+				margin-bottom: 30px;
+			}
+		}
+	}
+
+	.form_field{
+		width:100%;
+		padding:40px 20px;
+		background-color:  $turquois_darken;
+
+		ul{
+			margin: 0 auto;
+			display: table;
+
+			li{
+				float: left;
+			}
+		}
+		
+	}
+
+
+}

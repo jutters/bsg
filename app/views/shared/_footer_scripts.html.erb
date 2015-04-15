@@ -1,0 +1,169 @@
+<!-- jQuery -->
+<%= javascript_include_tag('https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', 'data-turbolinks-track' => true) %>
+    
+<!-- Custom Functions -->
+<%= javascript_include_tag('functions.js', 'data-turbolinks-track' => true) %>
+
+<!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
+<%= javascript_include_tag('classie.js', 'data-turbolinks-track' => true) %>
+
+<!-- Google Analytics-->   
+<!--    
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-57663659-1', 'auto');
+	ga('send', 'pageview');
+</script>
+-->
+
+<!-- Push Menu -->
+<script>
+
+    var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+        menuOpen = document.getElementById( 'open_icon' ),  
+        menuClose = document.getElementById( 'close_icon' ),  
+        showLeftPush = document.getElementById( 'showLeftPush' ),
+        body = document.body;
+
+
+    showLeftPush.onclick = function() {
+        classie.toggle( this, 'active' );
+        classie.toggle( body, 'cbp-spmenu-push-toright' );
+        classie.toggle( menuLeft, 'cbp-spmenu-open' );
+        classie.toggle( menuOpen, 'display_none' );
+        classie.toggle( menuClose, 'display_none' );
+        disableOther( 'showLeftPush' );
+    };
+
+
+
+    //... Dropdown
+
+    function DropDown(el) {
+        this.dropdown_category = el;
+        this.placeholder = this.dropdown_category.children('span');
+        this.opts = this.dropdown_category.find('ul.dropdown > li');
+        this.val = '';
+        this.index = -1;
+        this.initEvents();
+    }
+    DropDown.prototype = {
+        initEvents : function() {
+            var obj = this;
+     
+            obj.dropdown_category.on('click', function(event){
+                $(this).toggleClass('active');
+                return false;
+            });
+        },
+        getValue : function() {
+            return this.val;
+        },
+        getIndex : function() {
+            return this.index;
+        }
+    }
+
+    //... Dropdown
+
+    function DropDown(el) {
+        this.dropdown_price = el;
+        this.placeholder = this.dropdown_price.children('span');
+        this.opts = this.dropdown_price.find('ul.dropdown > li');
+        this.val = '';
+        this.index = -1;
+        this.initEvents();
+    }
+    DropDown.prototype = {
+        initEvents : function() {
+            var obj = this;
+     
+            obj.dropdown_price.on('click', function(event){
+                $(this).toggleClass('active');
+                return false;
+            });
+     
+        },
+        getValue : function() {
+            return this.val;
+        },
+        getIndex : function() {
+            return this.index;
+        }
+    }
+
+
+    //... Dropdown
+
+    function DropDown(el) {
+        this.dropdown_language = el;
+        this.placeholder = this.dropdown_language.children('span');
+        this.opts = this.dropdown_language.find('ul.dropdown > li');
+        this.val = '';
+        this.index = -1;
+        this.initEvents();
+    }
+    DropDown.prototype = {
+        initEvents : function() {
+            var obj = this;
+     
+            obj.dropdown_language.on('click', function(event){
+                $(this).toggleClass('active');
+                return false;
+            });
+     
+        },
+        getValue : function() {
+            return this.val;
+        },
+        getIndex : function() {
+            return this.index;
+        }
+    }
+
+    //... Dropdown
+
+    function DropDown(el) {
+        this.dropdown_provider = el;
+        this.placeholder = this.dropdown_provider.children('span');
+        this.opts = this.dropdown_provider.find('ul.dropdown > li');
+        this.val = '';
+        this.index = -1;
+        this.initEvents();
+    }
+    DropDown.prototype = {
+        initEvents : function() {
+            var obj = this;
+     
+            obj.dropdown_provider.on('click', function(event){
+                $(this).toggleClass('active');
+                return false;
+            });
+     
+        },
+        getValue : function() {
+            return this.val;
+        },
+        getIndex : function() {
+            return this.index;
+        }
+    }
+
+    $(function() {
+
+        var dropdown_category = new DropDown( $('#dropdown_category') );
+        var dropdown_provider = new DropDown( $('#dropdown_provider') );
+        var dropdown_language = new DropDown( $('#dropdown_language') );
+        var dropdown_price = new DropDown( $('#dropdown_price') );
+
+        $(document).click(function() {
+            $('.wrapper-dropdown').removeClass('active');
+        });
+
+    });
+
+</script>

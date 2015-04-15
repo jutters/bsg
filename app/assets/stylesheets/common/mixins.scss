@@ -1,0 +1,19 @@
+/***
+  
+  *
+
+  MIXINS
+  
+  *
+
+***/
+
+@mixin regular{
+	font-style: normal; 
+	font-weight: 300;
+}
+
+@mixin bold{
+	font-style: normal;
+	font-weight: 700;
+}

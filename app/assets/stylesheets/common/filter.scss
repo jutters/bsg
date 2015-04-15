@@ -1,0 +1,89 @@
+/***
+  
+  *
+
+  Filter
+  
+  *
+
+***/
+
+.filter{
+	width:100%;
+	padding: 0 20px;
+
+	ul{
+		margin: 0 auto;
+		display: table;
+
+		.price, .language, .provider{
+			float: left;
+			margin-right: 20px;
+
+			&:last-child{
+				margin-right: 0;
+			}
+
+			.wrapper-dropdown{
+				width: 380px;
+				height: 50px;
+				line-height: 47px;
+				border: 2px solid $black;
+				padding-left: 20px;
+
+				.dropdown{
+					width: 380px;
+					top: 48px;
+					right: -2px;
+					border:2px solid $black;
+					border-top:none;
+					font-size: 18px;
+					line-height: 20px;
+					text-transform: none;
+					@include regular;
+					z-index: 1000;
+					box-shadow:none;
+					transition: none;
+
+					li{
+						padding: 10px 20px;
+						cursor: auto;
+
+						i{
+							margin-right: 5px;
+							
+							&.inactive{
+								color: $grey_light;
+							}
+						}
+
+					}
+
+					.divider{
+						margin: 10px 0;
+						display: block;
+						width: 340px;
+						margin-left: 20px;
+						height: 1px;
+						background-color:$black;
+					}
+
+					.mark_all{
+						float: left;
+						margin-left: 20px;
+						padding: 10px 0;
+						font-size: 16px;
+					}
+					.remove_all{
+						float: right;
+						margin-right: 20px;
+						padding: 10px 0;
+						font-size: 16px;
+					}
+				}
+			}
+		}
+		
+	}
+
+}

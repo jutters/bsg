@@ -1,0 +1,42 @@
+<li class="shop">
+  <!-- MARKED -->
+  <div class="marked_badge">
+        <i class="fa fa-heart"></i>
+        <div class="triangle"></div>
+  </div>  
+  <!-- HOVER -->
+  <div class="hover">
+      <p class="shop_name"><%= shop.name %></p>
+      <ul>
+        <li class="icon_wrap">
+          <div class="icon"><i class="fa fa-eur"></i></div>
+          <div class="icon"><i class="fa fa-eur"></i></div>
+          <div class="icon inactive"><i class="fa fa-eur"></i></div>
+        </li>
+        <li>Englischsprachiger Shop mit Versand nach Deutschland</li>
+        <li>Shop einer Marke</li>
+      </ul>
+      <div class="buttons">
+        <a href="#" class="button_white_outline shop_link">Zum Shop</a>
+        <a href="#" class="button_white_outline mark_link"><i class="fa fa-heart-o"></i>&nbsp;&nbsp;Merken</a>
+      </div>
+  </div>
+  <!-- BOX -->
+  <p class="shop_name"><%= shop.name %></p>
+  <p class="insider_tipp">Insidertipp</p>  
+  <!-- INFO BLOCK -->
+  <div class="info">
+    <div class="team_thumb team_member_3"></div>
+    <div class="copy">
+      <p class="text"><%= truncate(sanitize(shop.comment), length: 40) %></p>
+      <p class="name">Empfehlung von <span class="bold">User XY</span></p>
+    </div>
+  </div>  
+  <div class="thumb">
+    <div class="overlay"></div>
+    <%= image_tag shop.image_url(:thumb).to_s %>    
+    <!--%= image_tag('shops/' + shop.image_url, class: 'shop_thumb') %>-->
+    <!--%= image_tag "shops/shop_thumb_1.jpg" %> -->
+    <!--img src="shops/shop_thumb_1.jpg"> -->
+  </div>
+</li>

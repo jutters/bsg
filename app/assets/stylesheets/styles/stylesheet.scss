@@ -1,0 +1,279 @@
+/***
+  
+  *
+
+  STYLESHEET
+  
+  *
+
+***/
+
+/**
+
+Author: Filip Raatz
+website: www.filipraatz.de
+email: hello@filipraatz.de
+
+**/
+
+/**
+
+    IMPORTS
+
+**/
+
+/**
+@import 'base/variables.scss';
+@import 'base/mixins';
+@import 'styles/navigation';
+@import 'styles/intro';
+@import 'styles/headline_block';
+@import 'styles/filter';
+@import 'styles/shop_list';
+@import 'styles/signup_form';
+@import 'styles/shop_suggest';
+@import 'styles/team';
+@import 'styles/footer';
+@import 'base/media_queries';
+**/
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body{
+  font-family: "brandon-grotesque",sans-serif;
+  color: $black;
+}
+
+a{color:$black;}
+
+h1, h2{
+	@include regular;
+	text-transform: uppercase;
+	text-align:center;
+	margin-bottom:60px;
+}
+
+h1{
+	font-size:40px;
+	line-height:48px;
+}
+
+h2{
+	font-size:30px;
+	line-height:38px;
+}
+
+.with_subline{
+	margin-bottom:20px;
+}
+
+.bold{
+	@include bold;
+}
+
+.display_none{
+	display:none;
+}
+.display_block{
+	display:block;
+}
+
+.red{
+	color:$red;
+}
+
+.button_black, .button_white{
+	text-transform: uppercase;
+	height: 50px;
+	width:280px;
+	border:none;
+	font-size: 14px;
+	cursor:pointer;
+	font-size:14px;
+	text-align:center;
+	line-height: 50px;
+	float:left;
+	@include bold;
+}
+
+.button_black_outline, .button_white_outline{
+	text-transform: uppercase;
+	height: 50px;
+	border:2px solid;
+	font-size: 14px;
+	cursor:pointer;
+	font-size:14px;
+	text-align:center;
+	line-height: 47px;
+	float:left;
+	@include bold;
+	padding: 0 20px;
+}
+
+.button_black{
+	background-color: $black;
+	color: $white;
+}
+
+.button_black_outline{
+	background-color: none;
+	color: $black;
+	border-color: $black;
+}
+
+.button_white{
+	background-color: $white;
+	color: $black;
+}
+
+.button_white_outline{
+	background-color: none;
+	color: $black;
+	border-color: $white;
+}
+
+.button_white:hover, 
+.button_white_outline:hover, 
+{
+	transition: all 0.3s ease-out;
+	background-color: $grey_light;
+}
+
+.button_black:hover, 
+.button_black_outline:hover{
+	transition: all 0.3s ease-out;
+	background-color: #373b3c;
+	color: $white;
+}
+
+.input_white, .input_black{
+	height: 50px;
+	width:280px;
+	padding: 0 20px;
+	font-size: 14px;
+	background: transparent;
+	border-radius:0;
+	float: left !important;
+	margin-right:20px;
+}
+
+.input_white{
+	color: $white;
+	border: 2px solid $white;
+	outline:none;
+}
+
+.input_black{
+	color: $black;
+	border: 2px solid $black;
+	outline:none;
+}
+
+.input_white::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+    color:    $white;
+}
+.input_white:-moz-placeholder, textarea:-moz-placeholder { 
+    color:    $white;
+}
+.input_white::-moz-placeholder, textarea::-moz-placeholder { 
+    color:    $white;
+}
+.input_white:-ms-input-placeholder, textarea:-ms-input-placeholder { 
+    color:    $white;
+}
+
+.input_black::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+    color:    $black;
+}
+.input_black:-moz-placeholder, textarea:-moz-placeholder { 
+    color:    $black;
+}
+.input_black::-moz-placeholder, textarea::-moz-placeholder { 
+    color:    $black;
+}
+.input_black:-ms-input-placeholder, textarea:-ms-input-placeholder { 
+    color:    $black;
+}
+
+.error{
+	color: $red;
+	border-color: $red;
+}
+
+
+/* Dropdown */
+
+	.wrapper-dropdown {
+	    position: relative;
+	    padding: 0 36px 0 0;
+	    float: left;
+	    margin-top: 18px;
+	    font-size: 14px;
+	    @include bold;
+	    text-transform: uppercase;
+	    cursor: pointer;
+	    outline: none;
+
+	    &:after{
+	    	content: "";
+		    width: 0;
+		    height: 0;
+		    position: absolute;
+		    right: 15px;
+		    top: 50%;
+		    margin-top: -3px;
+		    border-width: 5px 4px 0 4px;
+		    border-style: solid;
+		    border-color: $black transparent;
+	    }
+
+	    .dropdown {
+		    position: absolute;
+		    top: 200%;
+		    padding:10px 0;
+
+		    right: 0;
+		    width: 190px;
+		 	
+		    background: $white;
+		    box-shadow: 0 1px 6px rgba(0,0,0,0.3);
+		    transition: all 0.2s ease-in;
+		 
+		    opacity: 0;
+		    pointer-events: none;
+		    z-index: 1000;
+
+		    li{
+
+		    	a{
+				    display: block;
+				    padding: 10px 20px 10px 20px;
+				    color: $black;
+				    transition: all 0.3s ease-out;
+
+				    &.active{
+						opacity: 0.5;
+					}
+				}
+
+				&:hover a{
+					opacity: 0.5;
+				}
+
+			}
+
+		}
+
+		&.active .dropdown {
+		    opacity: 1;
+		    pointer-events: auto;
+		}
+
+	}
+

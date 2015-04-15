@@ -69,6 +69,24 @@ class ShopsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shop_params
-      params.require(:shop).permit(:name, :site_url, :image_url, :comment)
+      params.require(:shop).permit(
+        :name, 
+        :site_url, 
+        :comment,
+        :image,
+        :remote_image_url,
+        :insider_tip,
+        :price_segment_low, 
+        :price_segment_middle, 
+        :price_segment_high, 
+        :locale_de_shop, 
+        :locale_foreign_shop_de_website, 
+        :locale_foreign_shop_de_delivery, 
+        :brand_type_single,
+        :brand_type_multi,
+        :shop_type_women_fashion,
+        :shop_type_men_fashion,
+        :shop_type_interior_design
+      )
     end
 end

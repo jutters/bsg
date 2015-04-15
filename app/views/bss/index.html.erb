@@ -1,0 +1,283 @@
+<!-- NAVIGATION MOBILE-->
+
+<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+
+	<h3>Best Style Shops</h3>
+
+	<ul class="categories">
+		<li><a href="index.php">Männer Fashion</a></li>
+    <li><a href="women.php">Frauen Fashion</a></li>
+    <li><a href="interior.php">Interior Design</a></li>
+	</ul>
+
+	<ul class="categories">
+		<li><a href="logged_in.php">Login</a></li>
+		<li><a href="#signup">Registrieren</a></li>
+	</ul>
+
+</nav>
+
+<!-- NAVIGATION -->
+    
+<nav class="navigation">
+  
+  <div class="navigation_icon" id="showLeftPush">
+    <span id="close_icon" class="display_none">
+    	<i class="fa fa-close"></i>
+    </span>
+    <span id="open_icon">
+    	<i class="fa fa-bars"></i>
+    </span>
+    <span class="menu bold">Menu</span>
+  </div>
+
+  <div class="title bold">Best Style Shop</div>
+
+  <!-- Dropdown -->
+  <div id="dropdown_category" class="wrapper-dropdown" tabindex="1">
+    <span>Männer Fashion</span>
+    <ul class="dropdown">
+        
+        <li><a href="index.php" class="active">Männer Fashion</a></li>
+        <li><a href="women.php">Frauen Fashion</a></li>
+        <li><a href="interior.php">Interior Design</a></li>
+        
+        <span class="divider"></span>
+        
+        <li><a href="#shop_suggest">Shop vorschlagen</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#">Kontakt</a></li>
+
+    </ul>
+ </div>
+  
+  <div class="buttons">
+    <a class="login bold" href="logged_in.php">Login</a>
+    <a class="button_black_outline" href="#signup_form">Registrieren</a>
+  </div>
+
+  <div class="logo_wrap">
+    <a href="index.php" class="logo"></a>
+  </div>
+
+</nav>
+
+<!-- INTRO -->
+    
+<section class="intro men"></section>
+<a href="#headline_block" class="arrow"></a>
+
+<!-- HEADLINE BLOCK -->
+    
+<section class="headline_block" id="headline_block">
+  <div class="headline">
+    Eine von Fashion Expertinnen und Experten handverlesene Auswahl <br>
+    der besten Online Shops für alle Männer, die sich stilsicher und topmodisch kleiden wollen.
+  </div>
+</section>
+
+<!-- FILTER -->
+    
+<section class="filter">
+  <ul>
+
+    <li class="price">
+      <!-- Dropdown -->
+      <div id="dropdown_price" class="wrapper-dropdown" tabindex="2">
+        <span>Preissegmente</span>
+        <ul class="dropdown">
+            
+            <li>
+                <input type="checkbox" name="price" value="price_1">
+                <i class="fa fa-eur"></i>
+                <i class="fa fa-eur inactive"></i>
+                <i class="fa fa-eur inactive"></i>
+            </li>
+            <li>
+                <input type="checkbox" name="price" value="price_2">
+                <i class="fa fa-eur"></i>
+                <i class="fa fa-eur"></i>
+                <i class="fa fa-eur inactive"></i>
+            </li>
+            <li>
+                <input type="checkbox" name="price" value="price_3">
+                <i class="fa fa-eur"></i>
+                <i class="fa fa-eur"></i>
+                <i class="fa fa-eur"></i>
+            </li>
+            
+            <span class="divider"></span>
+            
+            <li class="mark_all">Alle markieren</li>
+            <li class="remove_all">Alle entfernen</li>
+        </ul>
+     </div>
+    </li>
+    <!-- Dropdown -->
+    <li class="language">
+      <div id="dropdown_language" class="wrapper-dropdown" tabindex="3">
+        <span>Sprachversionen</span>
+        <ul class="dropdown">
+            
+            <li>
+              <input type="checkbox" name="language" value="language_1">
+              Deutscher Shop
+            </li>
+            <li>
+              <input type="checkbox" name="language" value="language_2">
+              Ausländischer Shop mit deutscher Website
+            </li>
+            <li>
+              <input type="checkbox" name="language" value="language_3">
+              <p>Englischsprachiger Shop mit Versand nach Deutschland</p>
+            </li>
+            
+            <span class="divider"></span>
+            
+            <li class="mark_all">Alle markieren</li>
+            <li class="remove_all">Alle entfernen</li>
+        </ul>
+     </div>
+    </li>
+    <!-- Dropdown -->
+    <li class="provider">
+      <div id="dropdown_provider" class="wrapper-dropdown" tabindex="4">
+        <span>Anbieter</span>
+        <ul class="dropdown">
+            
+            <li>
+              <input type="checkbox" name="provider" value="provider_1">
+              Shop mit vielen Marken
+            </li>
+            <li>
+              <input type="checkbox" name="provider" value="provider_2">
+              Shop einer Marke
+            </li>
+            
+            <span class="divider"></span>
+            
+            <li class="mark_all">Alle markieren</li>
+            <li class="remove_all">Alle entfernen</li>
+        </ul>
+     </div>
+    </li>
+
+  </ul>
+</section>
+
+<!-- SHOP LIST -->
+    
+<section class="shop_list">
+  
+  <ul class="shops">
+    
+    <!-- SIGNUP BOX -->
+    <li class="signup_box">
+      <div class="headline_wrap">
+        <div class="number">13</div>
+        <div class="headline">Insidershops</div>
+      </div>
+      <div class="subline">
+        zum Aufdecken bitte <a class="bold" href="#signup_form">Registrieren</a> oder <a class="bold" href="#">Einloggen</a>
+      </div>
+    </li>
+
+    <%= render(partial: "shop", collection: @shops) %>
+
+  </ul>
+  
+  <div class="load_more">
+    <div class="button_black"><i class="fa fa-th-large"></i>&nbsp;&nbsp;&nbsp; Weitere Shops laden</div>
+  </div>
+
+</section>
+
+<!-- SIGNUP FORM -->
+    
+<section class="signup_form" id="signup_form">
+  
+  <div class="usp">
+    <h2><span class="bold">Best Style Shops</span> Konto</h2>
+    <ul>
+      <li>
+        <i class="fa fa-bookmark-o"></i>
+        <p>Insidertipp-Shops aufdecken und Bookmarks anlegen</p>
+      </li>
+      <li>
+        <i class="fa fa-envelope-o"></i>
+        <p>Per E-Mail über Aufnahme neuer Shops informiert werden (falls gewünscht)</p>
+      </li>
+      <li>
+        <i class="fa fa-star-o"></i>
+        <p>Insider-Infos und -Tipps zu den besten Online-Adressen für den stilsicheren Mann erhalten</p>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="form_field">
+    <form>
+      <fieldset>
+        <ul>
+          <li>
+            <input class="input_black" type="text" name="email" value="" placeholder="Deine E-Mail Adresse">
+          </li>
+          <li>
+            <div class="button_black">Jetzt kostenlos registrieren</div>
+          </li>
+        </ul>
+      </fieldset>
+    </form>
+  </div>
+
+</section>
+
+<!-- SHOP SUGGEST -->
+    
+<section class="shop_suggest" id="shop_suggest">
+
+  <h2 class="with_subline"><span class="bold">Du kennst weitere</span> stylische Shops?</h2>
+  <p>Wir nehmen deine Vorschläge gerne entegegen.</p>
+
+  <form>
+    <fieldset>
+      <ul>
+        <li>
+          <input class="input_white" type="text" name="url" value="" placeholder="Shop URL">
+        </li>
+        <li>
+          <input class="input_white" type="text" name="email" value="" placeholder="Deine E-Mail Adresse">
+        </li>
+        <li>
+          <div class="button_white"><i class="fa fa-heart-o"></i>&nbsp;&nbsp;&nbsp; Shop vorschlagen</div>
+        </li>
+      </ul>
+    </fieldset>
+  </form>
+
+</section>
+
+<!-- TEAM -->
+    
+<section class="team" id="team">
+
+    <h1><span class="bold">Das Experten Team</span><br> von Best Style Shops</h1>
+    
+    <ul class="team_member">
+      <li class="member member_1">
+        <div class="overlay"></div>
+        <div class="member_name">Brian Spors</div>
+      </li>
+      <li class="member member_2">
+        <div class="overlay"></div>
+        <div class="member_name">Maria Gonzales</div>
+      </li>
+      <li class="member member_3">
+        <div class="overlay"></div>
+        <div class="member_name">Jerome Conway</div>
+        
+      </li>
+    </ul>
+
+</section>
+
+</html>

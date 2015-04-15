@@ -1,25 +1,60 @@
 <h1>Listing shops</h1>
 
 <table>
-<% @shops.each do |shop| %>
-  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-    <td>
-      <%= image_tag(shop.image_url, class: 'list_image') %>
-    </td>
-    <td class="list_comment">
-      <dl>
-        <dt><%= shop.name %></dt>
-        <dd><%= truncate(strip_tags(shop.comment), length: 80) %></dd>
-      </dl>
-    </td>
-    <td class="list_actions">
-      <%= link_to 'Show', shop %><br/>
-      <%= link_to 'Edit', edit_shop_path(shop) %><br/>
-      <%= link_to 'Destroy', shop, method: :delete,
-                  data: { confirm: 'Are you sure?' } %>
-    </td>
-  </tr>
-<% end %>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name and Comment</th>
+      <th>Insider Tip</th>
+      <th>Price Segment<br>(€,€€,€€€)</th>
+      <th>Locale<br>(de, de_site, de_delivery)</th>
+      <th>Brand Type<br>(Single, Multi)</th>
+      <th>Shop Type<br>(Women, Men, Interior)</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <% @shops.each do |shop| %>
+    <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+      <td>
+        <%= image_tag shop.image_url(:thumb).to_s %>
+        <!--%= image_tag('shops/' + shop.image_url, class: 'list_image') %>-->
+      </td>
+      <td class="list_name_and_comment">
+        <dl>
+          <dt><%= shop.name %></dt>
+          <dd><%= strip_tags(shop.comment) %></dd>
+          <!--dd %= truncate(strip_tags(shop.comment), length: 150) %></dd>-->
+        </dl>
+      </td>
+      <td class="list_boolean">
+        <%= check_box_tag('insider_tip', '1', shop.insider_tip, disabled: true) %>
+      </td>      
+      <td class="list_boolean">
+        <%= check_box_tag('price_segment_low', '1', shop.price_segment_low, disabled: true) %>
+        <%= check_box_tag('price_segment_middle', '1', shop.price_segment_middle, disabled: true) %>
+        <%= check_box_tag('price_segment_high', '1', shop.price_segment_high, disabled: true) %>
+      </td>
+      <td class="list_boolean">
+        <%= check_box_tag('locale_de', '1', shop.locale_de_shop, disabled: true) %>
+        <%= check_box_tag('locale_de_site', '1', shop.locale_foreign_shop_de_website, disabled: true) %>
+        <%= check_box_tag('locale_de_delivery', '1', shop.locale_foreign_shop_de_delivery, disabled: true) %>
+      </td>
+      <td class="list_boolean">
+        <%= check_box_tag('brand_type_single', '1', shop.brand_type_single, disabled: true) %>
+        <%= check_box_tag('brand_type_multi', '1', shop.brand_type_multi, disabled: true) %>
+      </td>
+      <td class="list_boolean">
+        <%= check_box_tag('shop_type_women', '1', shop.shop_type_women_fashion, disabled: true) %>
+        <%= check_box_tag('shop_type_men', '1', shop.shop_type_men_fashion, disabled: true) %>
+        <%= check_box_tag('shop_type_interior', '1', shop.shop_type_interior_design, disabled: true) %>  
+      </td>      
+      <td class="list_actions">
+        <%= link_to 'Show', shop %><br/>
+        <%= link_to 'Edit', edit_shop_path(shop) %><br/>
+        <%= link_to 'Destroy', shop, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
 </table>
 <br />
 <%= link_to 'New shop', new_shop_path %>

@@ -11,15 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150213213849) do
+ActiveRecord::Schema.define(version: 20150408164348) do
 
   create_table "shops", force: true do |t|
     t.string   "name"
     t.string   "site_url"
-    t.string   "image_url"
     t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "price_segment_low",               default: false
+    t.boolean  "price_segment_middle",            default: true
+    t.boolean  "price_segment_high",              default: false
+    t.boolean  "locale_de_shop",                  default: true
+    t.boolean  "locale_foreign_shop_de_website",  default: false
+    t.boolean  "locale_foreign_shop_de_delivery", default: false
+    t.boolean  "brand_type_single",               default: false
+    t.boolean  "brand_type_multi",                default: true
+    t.boolean  "shop_type_women_fashion",         default: true
+    t.boolean  "shop_type_men_fashion",           default: true
+    t.boolean  "shop_type_interior_design",       default: false
+    t.boolean  "insider_tip",                     default: false
+    t.string   "image"
   end
 
 end

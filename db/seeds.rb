@@ -18,8 +18,7 @@ Shop.create!(name: 'Shop A',
 	shows you how to hold onto all the power and flexibility of JavaScript
 	while writing clearer, cleaner, and safer code.
       </p>},
-  site_url: 'www.shop_a.com',
-  image_url: 'cs.jpg')
+  site_url: 'www.shop_a.com')
 # . . .
 Shop.create!(name: 'Shop B',
   comment:
@@ -28,8 +27,7 @@ Shop.create!(name: 'Shop B',
         out there. If you need to get working programs delivered fast,
         you should add Ruby to your toolbox.
       </p>},
-  site_url: 'www.shop_b.com',
-  image_url: 'ruby.jpg')
+  site_url: 'www.shop_b.com')
 # . . .
 
 Shop.create!(name: 'Shop C',
@@ -42,5 +40,4 @@ Shop.create!(name: 'Shop C',
         procedures for Rails 2 and Rails 3, and introduces popular add-ons,
         including Cucumber, Shoulda, Machinist, Mocha, and Rcov.
       </p>},
-  site_url: 'www.shop_c.com',
-  image_url: 'rtp.jpg')
+  site_url: 'www.shop_c.com')

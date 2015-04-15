@@ -1,0 +1,37 @@
+/***
+  
+  *
+
+  HEADLINE BLOCK
+  
+  *
+
+***/
+
+.headline_block{
+	width:100%;
+	overflow: hidden;
+	
+	.headline{
+		p{
+			margin-bottom: 20px;
+		}
+		font-size: 20px;
+		line-height: 30px;
+		color: $black;
+		text-align: center;
+		padding: 40px 20px 60px 20px;
+
+		&.shops{
+			padding-bottom:0;
+			margin-bottom: 0;
+		}
+	}
+	.insider_checkbox{
+		float: right;
+		font-size: 14px;
+		@include bold;
+		text-transform: uppercase;
+	}
+
+}

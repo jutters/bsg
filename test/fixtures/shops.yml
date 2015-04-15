@@ -3,11 +3,9 @@
 one:
   name: MyString
   site_url: MyString
-  image_url: MyString
   comment: MyText
 
 two:
   name: MyString
   site_url: MyString
-  image_url: MyString
   comment: MyText

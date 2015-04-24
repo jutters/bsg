@@ -59,7 +59,7 @@ end
 set :application, "rails1"
 
 # repository location
-set :repo_url, "http://github.com/jutters/bsg.git"
+set :repo_url, "https://github.com/jutters/bsg.git"
 
 # :subversionn or :git
 set :scm, :git

@@ -4,18 +4,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.8'
 
 # define database type to use for Active Record
-group :development do
-  gem 'sqlite3'
-end
-
-group :test do
-  gem 'sqlite3'
-end
-
-group :production do
-  gem 'mysql2'
-end
-
+gem 'sqlite3'
+gem 'mysql2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

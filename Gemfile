@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
 
+gem 'rake'
+
 # define database type to use for Active Record
 gem 'sqlite3'
 gem 'mysql2'

@@ -1,3 +1,6 @@
+@import "common/variables";
+@import "common/mixins";
+
 /***
   
   *
@@ -216,8 +219,8 @@
 						}
 
 						&.inactive{
-							border: 1px solid $grey_light;
-							color: $grey_light;
+							border: 1px solid $grey-light;
+							color: $grey-light;
 							background-color:transparent;
 						}
 					}

@@ -9,7 +9,21 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- *
-  *= require_self
-  *= require main
+ *= require_self
  */
+@import "common/reset.css";
+@import "common/component.css";
+@import "common/variables";
+@import "common/mixins";
+
+@import "styles/filter.css.scss";
+@import "styles/navigation.css.scss";
+@import "styles/headline_block.css.scss";
+@import "styles/intro.css.scss";
+@import "styles/shop_list.css.scss";
+@import "styles/signup_form.css.scss";
+@import "styles/shop_suggest.css.scss";
+@import "styles/team.css.scss";
+@import "styles/footer.css.scss";
+@import "styles/media_queries.css.scss";
+@import "styles/stylesheet.css.scss";

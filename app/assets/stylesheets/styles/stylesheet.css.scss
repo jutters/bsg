@@ -1,3 +1,6 @@
+@import "common/variables";
+@import "common/mixins";
+
 /***
   
   *
@@ -16,26 +19,6 @@ email: hello@filipraatz.de
 
 **/
 
-/**
-
-    IMPORTS
-
-**/
-
-/**
-@import 'base/variables.scss';
-@import 'base/mixins';
-@import 'styles/navigation';
-@import 'styles/intro';
-@import 'styles/headline_block';
-@import 'styles/filter';
-@import 'styles/shop_list';
-@import 'styles/signup_form';
-@import 'styles/shop_suggest';
-@import 'styles/team';
-@import 'styles/footer';
-@import 'base/media_queries';
-**/
 
 *,
 *:after,
@@ -44,6 +27,7 @@ email: hello@filipraatz.de
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
+
 
 body{
   font-family: "brandon-grotesque",sans-serif;
@@ -142,7 +126,7 @@ h2{
 .button_white_outline:hover, 
 {
 	transition: all 0.3s ease-out;
-	background-color: $grey_light;
+	background-color: $grey-light;
 }
 
 .button_black:hover, 

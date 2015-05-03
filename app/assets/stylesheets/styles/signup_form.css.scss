@@ -1,3 +1,5 @@
+@import "common/variables";
+
 /***
   
   *
@@ -37,7 +39,7 @@
 	.form_field{
 		width:100%;
 		padding:40px 20px;
-		background-color:  $turquois_darken;
+		background-color:  $turquois-darken;
 
 		ul{
 			margin: 0 auto;

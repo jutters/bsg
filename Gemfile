@@ -7,7 +7,6 @@ gem 'rake'
 
 # define database type to use for Active Record
 gem 'sqlite3', group: [:development, :test]
-gem 'mysql2', group: :production
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -15,8 +14,6 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -25,7 +22,7 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -47,4 +44,12 @@ gem 'rmagick'
 gem 'carrierwave'
 
 # allow to rename to complete rails
-gem 'rename'
+gem 'rename', group: :development
+
+
+# define dependencies for the production environment on railshoster.com
+group :production do 
+  gem 'libv8', '~> 3.11.8.17'
+  gem 'therubyracer', :platform => :ruby
+  gem 'mysql2'
+end

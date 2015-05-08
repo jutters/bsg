@@ -49,6 +49,7 @@ gem 'rename', group: :development
 
 # define dependencies for the production environment on railshoster.com
 group :production do 
+  gem 'dotenv-rails'
   gem 'libv8', '~> 3.11.8.17'
   gem 'therubyracer', :platform => :ruby
   gem 'mysql2'

@@ -12,7 +12,7 @@
 .team{
 	width:100%;
 	padding-top:80px;
-	background: url(bg_team.png) no-repeat center center;
+	background: image-url('bg_team.png') no-repeat center center;
 	background-size: cover;
 
 	h1{
@@ -31,13 +31,13 @@
 			position: relative;
 
 			&.member_1{
-				background: url(members/portrait_1.jpg) no-repeat left 20px;
+				background: image-url('members/portrait_1.jpg') no-repeat left 20px;
 			}
 			&.member_2{
-				background: url(members/portrait_2.jpg) no-repeat top left;
+				background: image-url('members/portrait_2.jpg') no-repeat top left;
 			}
 			&.member_3{
-				background: url(members/portrait_3.jpg) no-repeat left 20px;
+				background: image-url('members/portrait_3.jpg') no-repeat left 20px;
 			}
 
 			.member_name{
@@ -52,7 +52,7 @@
 			.overlay{
 				width: 316px;
 				height: 402px;
-				background: url(portrait_overlay.png) no-repeat top left;
+				background: image-url('portrait_overlay.png') no-repeat top left;
 				position: absolute;
 			}
 		}

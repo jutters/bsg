@@ -25,7 +25,7 @@
 			width: 380px;
 			height: 380px;
 			padding: 160px 20px 0px 20px;
-			background: url(insider_shop_bg.png) center center;
+			background: image-url('insider_shop_bg.png') center center;
 			background-size: cover;
 			margin: 10px;
 			position:relative;
@@ -88,13 +88,13 @@
 					margin-right: 12px;
 
 					&.team_member_1{
-					background: url(members/team_membder_thumb_1.jpg) center center no-repeat;
+					background: image-url('members/team_membder_thumb_1.jpg') center center no-repeat;
 					}
 					&.team_member_2{
-					background: url(members/team_membder_thumb_2.jpg) center center no-repeat;
+					background: image-url('members/team_membder_thumb_2.jpg') center center no-repeat;
 					}
 					&.team_member_3{
-					background: url(members/team_membder_thumb_3.jpg) center center no-repeat;
+					background: image-url('members/team_membder_thumb_3.jpg') center center no-repeat;
 					}
 				}
 
@@ -121,7 +121,7 @@
 				.overlay{
 					width: 340px;
 					height: 310px;	
-					background: url(shop_overlay.png) center center;
+					background: image-url('shop_overlay.png') center center;
 					position:absolute;
 					bottom:0;
 
@@ -185,7 +185,7 @@
 				width: 380px;
 				height: 380px;
 				color: $white;
-				background: url(shop_hover.png) center center repeat-x;
+				background: image-url('shop_hover.png') center center repeat-x;
 				transition: opacity 0.35s;
 
 				.shop_name{

@@ -21,15 +21,15 @@
 	text-align:center;
 
 	&.men{
-		background: url(intro_img_men.jpg) top center;
+		background: image-url('intro_img_men.jpg') top center;
 		background-size:cover;
 	}
 	&.women{
-		background: url(intro_img_women.jpg) top center;
+		background: image-url('intro_img_women.jpg') top center;
 		background-size:cover;
 	}
 	&.interior{
-		background: url(intro_img_interior.jpg) top center;
+		background: image-url('intro_img_interior.jpg') top center;
 		background-size:cover;
 	}
 
@@ -64,7 +64,7 @@
 	width:120px;
 	height: 60px;
 	display:block;
-	background: url(intro_arrow.png) center center;
+	background: image-url('intro_arrow.png') center center;
 	margin: -60px auto 0 auto;
 	z-index:100;
 }

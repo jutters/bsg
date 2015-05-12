@@ -9,12 +9,15 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
+ *
+ *= require common/reset.css
+ *= require common/component.css
  *= require_self
+ *
  */
-@import "common/reset.css";
-@import "common/component.css";
-@import "common/variables";
-@import "common/mixins";
+
+@import "common/variables.css.scss";
+@import "common/mixins.css.scss";
 
 @import "styles/filter.css.scss";
 @import "styles/navigation.css.scss";

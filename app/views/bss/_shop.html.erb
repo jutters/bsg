@@ -9,15 +9,18 @@
       <p class="shop_name"><%= shop.name %></p>
       <ul>
         <li class="icon_wrap">
+          <li>PriceType PrettyPrint des Shops</li>
+          <!--
           <div class="icon"><i class="fa fa-eur"></i></div>
           <div class="icon"><i class="fa fa-eur"></i></div>
           <div class="icon inactive"><i class="fa fa-eur"></i></div>
+        -->
         </li>
-        <li>Englischsprachiger Shop mit Versand nach Deutschland</li>
-        <li>Shop einer Marke</li>
+        <li>Locale PrettyPrint des Shops</li>
+        <li>BrandType PrettyPrint des Shops</li>
       </ul>
       <div class="buttons">
-        <a href="#" class="button_white_outline shop_link">Zum Shop</a>
+        <a href="http://<%= shop.site_url %>" target="_blank" class="button_white_outline shop_link">Zum Shop</a>
         <a href="#" class="button_white_outline mark_link"><i class="fa fa-heart-o"></i>&nbsp;&nbsp;Merken</a>
       </div>
   </div>
@@ -34,7 +37,7 @@
   </div>  
   <div class="thumb">
     <div class="overlay"></div>
-    <%= image_tag shop.image_url(:thumb).to_s %>    
+    <%= image_tag shop.image_url(:thumb_tile).to_s %>    
     <!--%= image_tag('shops/' + shop.image_url, class: 'shop_thumb') %>-->
     <!--%= image_tag "shops/shop_thumb_1.jpg" %> -->
     <!--img src="shops/shop_thumb_1.jpg"> -->

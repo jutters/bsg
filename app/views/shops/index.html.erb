@@ -16,10 +16,13 @@
   <% @shops.each do |shop| %>
     <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
       <td>
-        <%= image_tag shop.image_url(:thumb).to_s %>
+        <%= image_tag shop.image_url(:thumb_cms).to_s %>
         <!--%= image_tag('shops/' + shop.image_url, class: 'list_image') %>-->
       </td>
-      <td class="list_name_and_comment">
+      <td class="list_url">
+        <%= label_tag shop.site_url %>
+      </td>
+      <td class="list_text">
         <dl>
           <dt><%= shop.name %></dt>
           <dd><%= strip_tags(shop.comment) %></dd>

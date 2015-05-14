@@ -3,7 +3,8 @@ class BssController < ApplicationController
 	#layout :determine_layout
 
 	def index
-	    @shops = Shop.order(:name)
+	    @shops = Shop.order(:name);
+	    @insider_shops = Shop.where(insider_tip: true);
 	end
 
 private

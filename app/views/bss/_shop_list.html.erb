@@ -1,0 +1,26 @@
+<!-- SHOP LIST -->
+    
+<section class="shop_list">
+  
+  <ul class="shops">
+    
+    <!-- SIGNUP BOX -->
+    <li class="signup_box">
+      <div class="headline_wrap">
+        <div class="number"><%= @insider_shops_count %></div>
+        <div class="headline">Insidershops</div>
+      </div>
+      <div class="subline">
+        zum Aufdecken bitte <a class="bold" href="#signup_form">Registrieren</a> oder <a class="bold" href="#">Einloggen</a>
+      </div>
+    </li>
+
+    <%= render(partial: "shop", collection: @shops) %>
+
+  </ul>
+  
+  <div class="load_more">
+    <div class="button_black"><i class="fa fa-th-large"></i>&nbsp;&nbsp;&nbsp; Weitere Shops laden</div>
+  </div>
+
+</section>

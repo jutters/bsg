@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <title>Best Style Shops <%= controller.action_name %></title>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+  <%= render(partial: "shared/header") %>  
+  <%= yield :header %>
+  
+</head>
+
+<body class='<%= controller.controller_name %> cbp-spmenu-push'>
+
+  <%= yield :layout %>
+
+  <%= render(partial: "navigation") %>  
+  <%= render(partial: "intro") %>
+  <%= render(partial: "filter") %>
+  <%= render(partial: "shop_list") %>
+  <%= render(partial: "signup") %>
+  <%= render(partial: "shop_suggest") %>
+  <%= render(partial: "team") %>
+
+</body>
+
+<%= render(partial: "shared/footer_scripts") %>
+<%= render(partial: "shared/footer") %>
+<%= yield :footer %>
+
+</html>

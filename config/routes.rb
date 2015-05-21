@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'bss/index'
+  get 'bss/men'
+  get 'bss/women'
+  get 'bss/interior'
 
   resources :shops
 

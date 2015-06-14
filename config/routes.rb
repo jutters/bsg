@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'bss/men'
   get 'bss/women'
   get 'bss/interior'
+  get 'bss/update_shop_filter'
 
   resources :shops
 

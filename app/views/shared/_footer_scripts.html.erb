@@ -1,11 +1,11 @@
 <!-- jQuery -->
-<%= javascript_include_tag('https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', 'data-turbolinks-track' => true) %>
+<!-- <%= javascript_include_tag('https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', 'data-turbolinks-track' => true) %> -->
     
 <!-- Custom Functions -->
-<%= javascript_include_tag('functions.js', 'data-turbolinks-track' => true) %>
+<!-- <%= javascript_include_tag('functions.js', 'data-turbolinks-track' => true) %> -->
 
 <!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
-<%= javascript_include_tag('classie.js', 'data-turbolinks-track' => true) %>
+<!-- <%= javascript_include_tag('thirdparty/classie.js', 'data-turbolinks-track' => true) %> -->
 
 <!-- Google Analytics-->   
 <!--    
@@ -42,14 +42,14 @@
 
 
     //... Dropdown
-
+/*
     function DropDown(el) {
         this.dropdown_category = el;
         this.placeholder = this.dropdown_category.children('span');
         this.opts = this.dropdown_category.find('ul.dropdown > li');
         this.val = '';
         this.index = -1;
-        this.initEvents();
+        this.initEvents(el);
     }
     DropDown.prototype = {
         initEvents : function() {
@@ -67,9 +67,9 @@
             return this.index;
         }
     }
-
+*/
     //... Dropdown
-
+/*
     function DropDown(el) {
         this.dropdown_price = el;
         this.placeholder = this.dropdown_price.children('span');
@@ -83,10 +83,16 @@
             var obj = this;
      
             obj.dropdown_price.on('click', function(event){
-                $(this).toggleClass('active');
+                console.log("clicked price dropdown");
+                $(obj).toggleClass('active');
                 return false;
             });
-     
+
+            $(obj.dropdown_price).find('ul.dropdown').on('click', function(event){
+                console.log("clicked price dropdown li item");
+                return false;
+            });
+
         },
         getValue : function() {
             return this.val;
@@ -95,10 +101,9 @@
             return this.index;
         }
     }
-
-
+*/
     //... Dropdown
-
+/*
     function DropDown(el) {
         this.dropdown_language = el;
         this.placeholder = this.dropdown_language.children('span');
@@ -111,7 +116,8 @@
         initEvents : function() {
             var obj = this;
      
-            obj.dropdown_language.on('click', function(event){
+            obj.dropdown_language.on('click', function(event){                
+                console.log("clicked language dropdown");
                 $(this).toggleClass('active');
                 return false;
             });
@@ -124,9 +130,9 @@
             return this.index;
         }
     }
-
+*/
     //... Dropdown
-
+/*
     function DropDown(el) {
         this.dropdown_provider = el;
         this.placeholder = this.dropdown_provider.children('span');
@@ -140,6 +146,7 @@
             var obj = this;
      
             obj.dropdown_provider.on('click', function(event){
+                console.log("clicked provider dropdown");
                 $(this).toggleClass('active');
                 return false;
             });
@@ -152,18 +159,100 @@
             return this.index;
         }
     }
+*/
 
-    $(function() {
+    var initFilterDropDown = function(dropDown) {
+        console.log("adding events to dropDown: " + dropDown.attr("id"));
 
-        var dropdown_category = new DropDown( $('#dropdown_category') );
-        var dropdown_provider = new DropDown( $('#dropdown_provider') );
-        var dropdown_language = new DropDown( $('#dropdown_language') );
-        var dropdown_price = new DropDown( $('#dropdown_price') );
+        dropDown.click(function(){
+            var $this = $(this);
+            console.log("clicked within dropDown" + $this.attr("id"));
+            $this.toggleClass('active');
+            return false;
+        });
+
+        var popup = dropDown.find(".dropdown");
+        console.log("found .dropdown elements within dropDown: " + popup.length);
+        popup.click(function(){
+            console.log("clicked within dropdown flyout");
+            return false;
+        });
+
+        var items = popup.find("li");
+        console.log("found lineitems within flyout: " + items.length);
+
+        items.click(function(){
+            // propagate click to contained checkbox
+            var $this = $(this);
+            console.log("clicked within lineitem");
+            var checkbox_item = $this.find("input[type=checkbox]");
+            console.log("found item checkbox: " + checkbox_item.attr("id")); 
+            console.log("item checkbox state: " + checkbox_item.prop("checked"));
+            //checkbox_item.prop("checked", !checkbox_item.prop("checked"));
+            checkbox_item.trigger('click');
+            return false;
+        });
+
+        var checkboxes = items.find("input[type=checkbox]");
+        console.log("found checkboxes within all lineitems: " + checkboxes.length);
+
+        checkboxes.click(function(e){
+            //e.preventDefault();
+            e.stopImmediatePropagation();
+            var $this = $(this);
+            console.log("clicked within checkbox: " + $this.attr("id"));
+            console.log("checkbox state: " + $this.prop("checked"));
+            //$this.prop("checked", !$this.prop("checked"));
+            //return false;
+        });
+
+        var submit = items.find("input[type=submit]");
+        console.log("found submit elements within all lineitems: " + checkboxes.length);
+
+        submit.click(function(e){
+            //e.preventDefault();
+            e.stopImmediatePropagation();
+            var $this = $(this);
+            console.log("clicked within submit element: " + $this.attr("name"));
+        });
+
+    }
+
+    var initCategoriesDropDown = function(dropDown) {
+        console.log("adding events to dropDown: " + dropDown.attr("id"));
+
+        dropDown.click(function(){
+            var $this = $(this);
+            console.log("clicked within dropDown" + $this.attr("id"));
+            $this.toggleClass('active');
+            return false;
+        });
+
+        var links = dropDown.find("a");
+        console.log("found href elements within dropDown: " + links.length);
+        
+        links.click(function(e){
+            //e.preventDefault();
+            e.stopImmediatePropagation();
+            var $this = $(this);
+            console.log("clicked within links element: " + $this.attr("name"));
+        });
+
+    }
+
+    var initDocumentJS = function() {
+
+        var dropdown_price = initFilterDropDown($("#dropdown_price"));
+        var dropdown_language = initFilterDropDown($("#dropdown_language"));
+        var dropdown_provider = initFilterDropDown($("#dropdown_provider"));
+
+        var dropdown_catageries = initCategoriesDropDown($("#dropdown_category"));
 
         $(document).click(function() {
+            console.log("clicked within document");
             $('.wrapper-dropdown').removeClass('active');
         });
 
-    });
+    }();
 
 </script>

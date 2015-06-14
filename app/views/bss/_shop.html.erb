@@ -9,15 +9,31 @@
       <p class="shop_name"><%= shop.name %></p>
       <ul>
         <li class="icon_wrap">
-          <li>PriceType PrettyPrint des Shops</li>
           <!--
           <div class="icon"><i class="fa fa-eur"></i></div>
           <div class="icon"><i class="fa fa-eur"></i></div>
           <div class="icon inactive"><i class="fa fa-eur"></i></div>
-        -->
+          -->
+          <li>Price-Type: 
+            <%= shop.price_segment_low %>
+            <%= shop.price_segment_middle %>
+            <%= shop.price_segment_high %>
+          </li>
+          <li>Locale: 
+            <%= shop.locale_de_shop %>
+            <%= shop.locale_foreign_shop_de_website %>
+            <%= shop.locale_foreign_shop_de_delivery %>
+          </li>
+          <li>Brand-Type: 
+            <%= shop.brand_type_single %>
+            <%= shop.brand_type_multi %>
+          </li>
+          <li>Shop-Type: 
+            <%= shop.shop_type_men_fashion %>
+            <%= shop.shop_type_women_fashion %>
+            <%= shop.shop_type_interior_design %>
+          </li>
         </li>
-        <li>Locale PrettyPrint des Shops</li>
-        <li>BrandType PrettyPrint des Shops</li>
       </ul>
       <div class="buttons">
         <a href="http://<%= shop.site_url %>" target="_blank" class="button_white_outline shop_link">Zum Shop</a>

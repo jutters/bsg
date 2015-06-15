@@ -44,7 +44,7 @@ public
   end
 
   def ignore_price_segment
-    (self.price_segment_high == self.price_segment_middle) && (self.price_segment_middle == self.price_segment_high);
+    (self.price_segment_low == self.price_segment_middle) && (self.price_segment_middle == self.price_segment_high);
   end
 
   def locale_de_shop
@@ -178,7 +178,7 @@ public
     complete_query = sub_queries.join(" AND ");
 
     shops = shops.where(complete_query, get_filter_settings);
-    Rails.logger.debug "SQL: #{shops.to_sql}"
+    Rails.logger.info "SQL: #{shops.to_sql}"
 
     shops.all
   end

@@ -28,8 +28,8 @@ class ShopsController < ApplicationController
 
     respond_to do |format|
       if @shop.save
-        format.html { redirect_to @shop, notice: 'Shop was successfully created.' }
-        format.json { render :show, status: :created, location: @shop }
+        format.html { redirect_to shops_url, notice: 'Shop was successfully created.' }
+        format.json { render :show, status: :created, location: shops_url }
       else
         format.html { render :new }
         format.json { render json: @shop.errors, status: :unprocessable_entity }

@@ -14,8 +14,15 @@
 
 <body class='<%= controller.controller_name %> cbp-spmenu-push'>
 
-  <%= yield :layout %>
+  	<div id="container">
 
+		<% flash.each do |name, msg| %>
+		<%= content_tag :div, msg, :id => "flash_#{name}" %>
+		<% end %>
+
+  		<%= yield :layout %>
+  		
+   	</div>
 </body>
 
 <%= render(partial: "shared/footer_scripts") %>

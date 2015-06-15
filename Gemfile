@@ -7,6 +7,8 @@ source 'https://rubygems.org' do
 
 	gem 'rake'
 
+	gem 'sprockets-rails', '2.2.4'
+
 	# define database type to use for Active Record
 	gem 'sqlite3', group: [:development, :test]
 
@@ -42,7 +44,7 @@ source 'https://rubygems.org' do
 	gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 	# add support for interactive file uploads with image resizing for thumbnails
-	gem 'rmagick'
+	gem 'rmagick', '2.14.0'
 	gem 'carrierwave'
 
 	# allow to rename to complete rails

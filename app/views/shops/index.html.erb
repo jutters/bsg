@@ -1,5 +1,10 @@
 <h1>Listing shops</h1>
 
+<div>
+  <%= button_to 'Add Shop', new_shop_path, :method => :get %>
+  <br>
+</div>
+
 <table>
   <thead>
     <tr>
@@ -61,4 +66,3 @@
   <% end %>
 </table>
 <br />
-<%= link_to 'New shop', new_shop_path %>

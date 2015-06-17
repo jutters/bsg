@@ -41,7 +41,6 @@ class Shop < ActiveRecord::Base
 
 	#attr_accessible :name, :image, :remote_image_url
 	validates :name, :site_url, presence: true
-	validates :site_url, uniqueness: true
 	validates_with ShopValidator
 
 	mount_uploader :image, ImageUploader

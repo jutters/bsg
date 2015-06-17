@@ -1,7 +1,7 @@
 class AddPriceSegmentsToShop < ActiveRecord::Migration
   def change
     add_column :shops, :price_segment_low, :boolean, default: false
-    add_column :shops, :price_segment_middle, :boolean, default: true
+    add_column :shops, :price_segment_middle, :boolean, default: false
     add_column :shops, :price_segment_high, :boolean, default: false
     Shop.reset_column_information
     Shop.all.each do |s|

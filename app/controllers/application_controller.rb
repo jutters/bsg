@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
 private
  
+  helper :layout 
+  
   def user_session
   	@user_session ||= UserSession.new(session)
   end

@@ -7,12 +7,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 
-  <%= render(partial: "shared/header") %>  
-  <%= yield :header %>
+    <%= render(partial: "shared/header") %>  
+    <%= yield :header %>
   
 </head>
 
 <body class='<%= controller.controller_name %> cbp-spmenu-push'>
+
+  <!-- <h4>Header</h4><%= debug(headers) %> -->
+  <!-- <h4>Params</h4><%= debug(params) %> -->
 
   <%= yield :layout %>
 
@@ -24,6 +27,10 @@
   <%= render(partial: "shop_suggest") %>
   <%= render(partial: "team") %>
 
+  <!-- <h4>Session</h4><%= debug(session) %> -->
+  <!-- <h4>Request</h4><%= debug(request) %> -->
+  <!-- <h4>Response</h4><%= debug(response) %> -->
+  
 </body>
 
 <%= render(partial: "shared/footer_scripts") %>

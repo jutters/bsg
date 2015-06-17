@@ -1,8 +1,8 @@
 <%= form_for(@shop, html: {multipart: true}) do |f| %>
-  <% if @shop.errors.any? %>
+  <%= f.error_messages %>
+<!--   <% if @shop.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@shop.errors.count, "error") %> prohibited this shop from being saved:</h2>
-
+      <h1><%= pluralize(@shop.errors.count, "error") %> prohibited this shop from being saved:</h1>
       <ul>
       <% @shop.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,54 +10,109 @@
       </ul>
     </div>
   <% end %>
+ -->
+  <table>
+    <tr class="field">
+      <td>
+        <%= f.label :name %>
+      </td>
+      <td>
+        <%= f.text_field :name %>
+      </td>
+    </tr>
+    
+    <tr class="field">
+      <td class="field">
+        <%= f.label :site_url %>
+      </td>
+      <td>
+        <%= f.url_field :site_url %>
+      </td>
+    </tr>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :site_url %>
-    <%= f.text_field :site_url %>
-  </div>
-  <p>
-    <%= f.file_field :image %>
-  </p>
-  <p>
-    <%= f.label :remote_image_url, "or image URL" %><br />
-    <%= f.text_field :remote_image_url %>
-  </p>
-  <div class="field">
-    <%= f.label :comment %>
-    <%= f.text_area :comment, rows:3 %>
-  </div>
-  <div>
-    <strong>Insider Tip:</strong>
-    <%= f.check_box :insider_tip %>Insider Tip
-  </div>  
-  <div>
-    <strong>Price Segment:</strong>
-    <%= f.check_box :price_segment_low %>€
-    <%= f.check_box :price_segment_middle %>€€
-    <%= f.check_box :price_segment_high %>€€€
-  </div>
-  <div>
-    <strong>Locale:</strong>
-    <%= f.check_box :locale_de_shop %>de
-    <%= f.check_box :locale_foreign_shop_de_website %>de_site
-    <%= f.check_box :locale_foreign_shop_de_delivery %>de_delivery
-  </div>
-  <div>
-    <strong>Brand Type:</strong>
-    <%= f.check_box :brand_type_single %>Single
-    <%= f.check_box :brand_type_multi %>Multi
-  </div>
-  <div>
-    <strong>Shop Type:</strong>
-    <%= f.check_box :shop_type_women_fashion %>Women
-    <%= f.check_box :shop_type_men_fashion %>Men
-    <%= f.check_box :shop_type_interior_design %>Interior
-  </div>  
+    <tr class="field">
+      <td>
+        <%= f.label "Image from File" %>
+      </td>
+      <td>
+        <%= f.file_field :image %><br>
+      </td>
+    </tr>
+
+    <tr class="field">
+      <td>
+        <%= f.label "Image from Web" %>
+      </td>
+      <td>
+        <%= f.url_field :remote_image_url %>
+      </td>
+    </tr>
+    
+    <tr class="field">
+      <td>
+        <%= f.label :comment %>
+      </td>
+      <td>
+        <%= f.text_area :comment, rows:3 %>
+      </td>
+    </tr>
+
+    <tr class="field">
+      <td>
+        <p>Insider Tip:</p>
+      </td>
+      <td>
+        <%= f.check_box :insider_tip %>Insider Tip
+      </td>
+    </tr>
+
+    <tr class="field">
+      <td>
+        <p>Price Segment:</p>
+      </td>
+      <td>
+        <%= f.check_box :price_segment_low %>€
+        <%= f.check_box :price_segment_middle %>€€
+        <%= f.check_box :price_segment_high %>€€€
+      </td>
+    </tr>
+
+    <tr class="field">
+      <td>
+        <p>Locale:</p>
+      </td>
+      <td>
+        <%= f.check_box :locale_de_shop %>de
+        <%= f.check_box :locale_foreign_shop_de_website %>de_site
+        <%= f.check_box :locale_foreign_shop_de_delivery %>de_delivery
+      </td>
+    </tr>
+
+    <tr class="field">
+      <td>
+        <p>Brand Type:</p>
+      </td>
+      <td>
+        <%= f.check_box :brand_type_single %>Single
+        <%= f.check_box :brand_type_multi %>Multi
+      </td>
+    </tr>
+
+
+    <tr class="field">
+      <td>
+        <p>Shop Type:</p>
+      </td>
+      <td>
+        <%= f.check_box :shop_type_women_fashion %>Women
+        <%= f.check_box :shop_type_men_fashion %>Men
+        <%= f.check_box :shop_type_interior_design %>Interior
+      </td>
+    </tr>
+  </table>
+
   <div class="actions">
     <%= f.submit %>
   </div>  
+
 <% end %>

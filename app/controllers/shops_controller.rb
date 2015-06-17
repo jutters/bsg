@@ -1,5 +1,11 @@
 class ShopsController < ApplicationController
   before_action :set_shop, only: [:show, :edit, :update, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_shop
+
+  def invalid_shop
+    logger.error "Attempt to access unknown shop #{params[:id]}";
+    redirect_to shops_url, alert: 'Unknown Shop';
+  end
 
   # GET /shops
   # GET /shops.json

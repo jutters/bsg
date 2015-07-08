@@ -1,19 +1,24 @@
-<li class="shop">
+<% if !shop.insider_tip || user_session.logged_in? %>
+<li class="shop <% if shop.insider_tip %>insider<% end %>">
   <!-- MARKED -->
-  <div class="marked_badge">
-        <i class="fa fa-heart"></i>
-        <div class="triangle"></div>
-  </div>  
+ 
+  <% if shop.is_user_favorite(user_session.get_logged_in_user) %> 
+    <div class="marked_badge">
+          <i class="fa fa-heart"></i>
+          <div class="triangle"></div>
+    </div>
+  <%end%>
+
   <!-- HOVER -->
   <div class="hover">
       <p class="shop_name"><%= shop.name %></p>
       <ul>
         <li class="icon_wrap">
-          <!--
-          <div class="icon"><i class="fa fa-eur"></i></div>
-          <div class="icon"><i class="fa fa-eur"></i></div>
-          <div class="icon inactive"><i class="fa fa-eur"></i></div>
-          -->
+          
+          <div class="icon <% if !shop.price_segment_low %>inactive<% end %>"><i class="fa fa-eur"></i></div>
+          <div class="icon <% if !shop.price_segment_middle %>inactive<% end %>"><i class="fa fa-eur"></i></div>
+          <div class="icon <% if !shop.price_segment_high %>inactive<% end %>"><i class="fa fa-eur"></i></div>
+          
           <li>Price-Type: 
             <%= shop.price_segment_low %>
             <%= shop.price_segment_middle %>
@@ -33,11 +38,33 @@
             <%= shop.shop_type_women_fashion %>
             <%= shop.shop_type_interior_design %>
           </li>
+          <li>Insider tip:
+            <%= shop.insider_tip %>
+          </li>
+          <li>Favorite:
+            <%= shop.is_user_favorite(user_session.get_logged_in_user) %>
+          </li>
         </li>
       </ul>
       <div class="buttons">
         <a href="http://<%= shop.site_url %>" target="_blank" class="button_white_outline shop_link">Zum Shop</a>
-        <a href="#" class="button_white_outline mark_link"><i class="fa fa-heart-o"></i>&nbsp;&nbsp;Merken</a>
+        <!--<a href="#" class="button_white_outline mark_link"><i class="fa fa-heart-o"></i>&nbsp;&nbsp;Merken</a>-->
+        <% if shop.is_user_favorite(user_session.get_logged_in_user) %> 
+          <%= link_to("", toggle_shop_favorite_path(shop), class: "button_white_outline mark_link marked", method: :post) do %>
+            <i class="fa fa-heart"></i>&nbsp;&nbsp;Merken
+          <% end %>
+        <% else %>
+          <%= link_to("", toggle_shop_favorite_path(shop), class: "button_white_outline mark_link", method: :post) do %>
+            <i class="fa fa-heart-o"></i>&nbsp;&nbsp;Merken
+          <% end %>
+        <% end% %>
+<!--
+        <a href=<%= url_for(toggle_shop_favorite_path(shop))%> class="button_white_outline mark_link <% if shop.is_user_favorite(user_session.get_logged_in_user) %>marked<% end %>">
+          <i class="fa <% if shop.is_user_favorite(user_session.get_logged_in_user) %>fa-heart-o<% else %>fa-heart<% end %>"></i>
+          &nbsp;&nbsp;Merken
+        </a>
+-->
+        <!--<%= button_to "Merken", shop_favorites_path(shop_id: shop) %>-->
       </div>
   </div>
   <!-- BOX -->
@@ -59,3 +86,4 @@
     <!--img src="shops/shop_thumb_1.jpg"> -->
   </div>
 </li>
+<% end %>

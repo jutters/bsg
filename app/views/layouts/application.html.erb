@@ -1,24 +1,49 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
-  <title>Best Style Guide</title>
+  <title>controller.controller_name</title>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-	<%= render(partial: "shared/header") %>  
 	<%= yield :header %>
   
 </head>
 
 <body class='<%= controller.controller_name %> cbp-spmenu-push'>
+  
+  <!--<h4>Request</h4><%= debug(request) %>-->
+  <h4>Header</h4><%= debug(headers) %>
+  <h4>Params</h4><%= debug(params) %>
+  <h4>Stored Params</h4><%= debug(user_session.get_stored_params()) %>
 
-  	<%= yield :layout %>
-  		
+  <% if user_session.logged_in? %>
+    <section class="horizontal_section">
+      <ul class="button_list">
+        <li><%= link_to 'Admin Home', admin_path, method: :get %></li>
+        <li><%= link_to 'Shops', shops_path, method: :get %></li>
+        <li><%= link_to 'Users', users_path, method: :get %></li>
+        <li><%= link_to 'Logout', logout_path, method: :delete %></li>
+      </ul>
+    </section>
+  <% end %>
+
+
+  <div id="layout_container">
+
+	 <%= content_tag :h2, yield(:title) if show_title? %>
+
+	 <% flash.each do |name, msg| %>
+		<%= content_tag :div, msg, :id => "flash_#{name}" %>
+	 <% end %>
+
+   <%= yield :layout %>
+		
+  </div>
+
 </body>
 
-<%= render(partial: "shared/footer") %>
 <%= yield :footer %>
 
 </html>

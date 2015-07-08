@@ -17,59 +17,18 @@
  *
  */
 
-#container {
-  padding: 20px 10px;
-}
-
-#flash_notice, #flash_error, #flash_alert {
-  padding: 5px 8px;
-  margin: 10px 0;
-}
-
-#flash_notice {
-  background-color: #CFC;
-  border: solid 1px #6C6;
-}
-
-#flash_error, #flash_alert {
-  background-color: #FCC;
-  border: solid 1px #C66;
-}
-
-.error_messages {
-  width: 400px;
-  border: 2px solid #CF0000;
-  padding: 0px;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-  font-size: 12px;
-}
-
-.error_messages h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 10px;
-  font-size: 12px;
-  margin: 0;
-  background-color: #b00;
-  color: #fff;
-}
-
-.error_messages p {
-  margin: 8px 10px;
-}
-
-.error_messages ul {
-  margin-left: 25px;
-}
-
-.error_messages li {
-  list-style: disc;
-}
+@import "font-awesome-sprockets";
+@import "font-awesome"; 
 
 @import "common/variables.css.scss";
 @import "common/mixins.css.scss";
+
+@import "shared/common.css.scss";
+@import "shared/flash.css.scss";
+
+@import "scaffolds.css.scss";
+@import "admin.css.scss";
+@import "users.css.scss";
 
 @import "styles/filter.css.scss";
 @import "styles/navigation.css.scss";

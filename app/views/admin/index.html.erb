@@ -1,0 +1,9 @@
+<% title "BSG - Admin Area" %>
+
+
+Currently logged in user: <%= user_session.get_logged_in_user_name() %>
+<br>
+It's <%= Time.now %>.
+<br>
+There are a total of <%= pluralize(@total_shops, "shop") %>.
+<br>

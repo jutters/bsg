@@ -1,39 +1,55 @@
 class BssController < ApplicationController
+	
+	before_action :init, only: [:men, :women, :interior]
 
-	before_action :init, only: [:men, :women, :interior] 
+	skip_before_action :save_request, only: [:login, :logout, :update_shop_filter_settings]
+	skip_before_action :authorize_request, only: [:men, :women, :interior, :update_shop_filter_settings, :login, :logout]
+
 	#layout :determine_layout
 
+	layout "bss", except: [ :favorites ]
+	layout "bss_favorites", only: [ :favorites ]
+
+	def login
+		redirect_to controller: "user_sessions", action: "new";
+	end
+
+	def logout
+		redirect_to controller: "user_sessions", action: "destroy";
+	end
+
 	def men
-		user_session.set_current_action('men');
 	    filter_shops("shop_type_men_fashion");
 	end
 
 	def women
-		user_session.set_current_action('women');
 	    filter_shops("shop_type_women_fashion");
 	end
 
 	def interior
-		user_session.set_current_action('interior');
 	    filter_shops("shop_type_interior_design");
 	end
 
-	def update_shop_filter	
-		user_session.update_shop_filter(shop_filter_params);
-		redirect_to :action => user_session.get_current_action;
+	def update_shop_filter_settings	
+		user_session.update_shop_filter_settings(shop_filter_params);
+		#redirect_to :action => user_session.get_current_action;
+		restore_last_request();
+	end
+
+	def favorites
+		@shops = user_session.get_favorite_shops();
 	end
 
 private 
 	def init
 		params[:shop_filter_settings] = user_session.get_shop_filter_settings();
-		Rails.logger.debug "params: #{params}";
-	end 
+	end
 
 	def filter_shops(shop_type)
-		Rails.logger.debug "querying shops with shop_type: '#{shop_type}'...";
+		Rails.logger.debug "+++ filtering shops with shop_type: '#{shop_type}'...";
 		#@shops = Shop.where(type => true).order(:name);
 		@shops = user_session.get_filtered_shops(shop_type);
-		Rails.logger.debug "filter result: #{@shops}";
+		Rails.logger.debug "+++ filter result: #{@shops}";
 		@insider_shops_count = @shops.select{ |shop| shop.insider_tip? }.count;
 	end
 

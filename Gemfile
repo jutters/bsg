@@ -19,6 +19,9 @@ source 'https://rubygems.org' do
 	# Use CoffeeScript for .js.coffee assets and views
 	gem 'coffee-rails', '~> 4.0.0'
 
+	# use Font Awesame as font and css toolkit
+	gem 'font-awesome-sass'
+
 	# Use jquery as the JavaScript library
 	gem 'jquery-rails'
 	# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -29,7 +32,7 @@ source 'https://rubygems.org' do
 	gem 'sdoc', '~> 0.4.0', group: :doc
 
 	# Use ActiveModel has_secure_password
-	# gem 'bcrypt', '~> 3.1.7'
+	gem 'bcrypt', '~> 3.1.7'
 
 	# Use unicorn as the app server
 	# gem 'unicorn'

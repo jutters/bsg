@@ -24,10 +24,10 @@ class ShopsControllerTest < ActionController::TestCase
 
   test "should create shop" do
     assert_difference('Shop.count') do
-      post :create, shop: @update
+      post :create, shop: {name: "test-shop", site_url: "www.abc.de", }
     end
 
-    assert_redirected_to shop_path(assigns(:shop))
+    assert_redirected_to shops_url
   end
 
   test "should show shop" do
@@ -42,7 +42,8 @@ class ShopsControllerTest < ActionController::TestCase
 
   test "should update shop" do
     patch :update, id: @shop, shop: @update
-    assert_redirected_to shop_path(assigns(:shop))
+
+    assert_redirected_to shops_url
   end
 
   test "should destroy shop" do

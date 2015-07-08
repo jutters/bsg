@@ -1,0 +1,108 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user_form {
+
+	fieldset {
+		background: #efe;
+		padding: 1em;
+		border: solid 1px #141;
+		margin-bottom: 10px;
+
+		legend {
+			color: #dfd;
+			background: #141;
+			font-family: sans-serif;
+			padding: 0.2em 1em;
+		}
+	}
+
+	form {
+		label {
+			width: 5em;
+			float: left;
+			text-align: right;
+			padding-top: 0.2em;
+			margin-right: 0.1em;
+			display: block;
+		}
+
+		select, textarea, input {
+			margin-left: 0.5em;
+			margin-bottom: 12px;
+		}
+
+		input[type="submit"] {
+			margin-left: 1em;
+			margin-top: 6px;
+			margin-bottom: 6px;		
+		}
+
+		//.submit {
+		//	margin-left: 4em;
+		//	margin-bottom: 0px;
+		//}
+
+		br {
+			display: none;
+		}
+	}
+}
+
+// Place all the styles related to the Shops controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* START_HIGHLIGHT */
+.users {
+  table {
+    border-collapse: collapse;
+  }
+
+  table tr td {
+    padding: 10px;
+    vertical-align: top;
+    text-align: center;
+  }
+
+  .list_image {
+    width:  60px;
+    height: 70px;
+  }
+
+  .list_name_and_comment {
+    //width: 60%;
+    width: 600px;
+    text-align: left;
+
+    dl {
+      margin: 0;
+    }
+
+    dt {
+      color:        #244;
+      font-weight:  bold;
+      font-size:    larger;
+    }
+
+    dd {
+      margin: 0;
+    }
+  }
+
+  .list_actions {
+    font-size:    x-small;
+    text-align:   right;
+    padding-left: 1em;
+  }
+
+  .list_line_even {
+    background:   #e0f8f8;
+  }
+
+  .list_line_odd {
+    background:   #f8b0f8;
+  }
+}
+/* END_HIGHLIGHT */

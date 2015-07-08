@@ -1,0 +1,27 @@
+<h1>Listing shop_favorites</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Shop</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shop_favorites.each do |shop_favorite| %>
+      <tr>
+        <td><%= shop_favorite.shop %></td>
+        <td><%= shop_favorite.user %></td>
+        <td><%= link_to 'Show', shop_favorite %></td>
+        <td><%= link_to 'Edit', edit_shop_favorite_path(shop_favorite) %></td>
+        <td><%= link_to 'Destroy', shop_favorite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shop favorite', new_shop_favorite_path %>

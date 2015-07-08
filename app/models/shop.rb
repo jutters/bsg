@@ -45,9 +45,36 @@ class Shop < ActiveRecord::Base
 
 	mount_uploader :image, ImageUploader
 
+  has_many :shop_favorites
+  before_destroy :ensure_not_referenced_by_any_shop_favorite
+
 	#default_scope { where("published IS NOT NULL") }
 	default_scope { where("id IS NOT NULL") }
 	scope :men, -> { where(shop_type_men: true) }
 	scope :women, -> { where(shop_type_women: true) }
 	scope :interior_design, -> { where(shop_type_interior_design: true) }
+
+public
+
+  def is_user_favorite(user)
+    if user == nil
+      false;
+    else
+      self.shop_favorites.users(user.id).count > 0
+      #ShopFavorite.users(user.id).shops(self.id).count > 0
+    end    
+  end
+
+private
+
+  # ensure there are no favorites referencing this shop
+  def ensure_not_referenced_by_any_shop_favorite
+    if shop_favorites.empty?
+      return true
+    else
+      errors.add(:base, "There a some user favorites referencing this shop.")
+      return false
+    end
+  end
+
 end

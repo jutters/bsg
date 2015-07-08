@@ -5,14 +5,17 @@
 	<h3>Best Style Shops</h3>
 
 	<ul class="categories">
-    <li><%= link_to("Männer Fashion", "men") %></li>
-    <li><%= link_to("Frauen Fashion", "women") %></li>
-    <li><%= link_to("Interior Design", "interior") %></li>
+        <li><%= link_to("Männer Fashion", {controller: "bss", action: "men"}) %></li>
+        <li><%= link_to("Frauen Fashion", {controller: "bss", action: "women"}) %></li>
+        <li><%= link_to("Interior Design", {controller: "bss", action: "interior"}) %></li>
 	</ul>
 
 	<ul class="categories">
 		<li><a href="logged_in.php">Login</a></li>
 		<li><a href="#signup">Registrieren</a></li>
+    <% if user_session.logged_in? %>
+      <li><%= link_to("Ausloggen", "logout") %>
+    <% end %>
 	</ul>
 
 </nav>
@@ -38,9 +41,9 @@
     <span>Männer Fashion</span>
     <ul class="dropdown">
         
-        <li><%= link_to("Männer Fashion", "men") %></li>
-        <li><%= link_to("Frauen Fashion", "women") %></li>
-        <li><%= link_to("Interior Design", "interior") %></li>
+        <li><%= link_to("Männer Fashion", {controller: "bss", action: "men"}) %></li>
+        <li><%= link_to("Frauen Fashion", {controller: "bss", action: "women"}) %></li>
+        <li><%= link_to("Interior Design", {controller: "bss", action: "interior"}) %></li>
         
         <span class="divider"></span>
         
@@ -52,8 +55,15 @@
  </div>
   
   <div class="buttons">
-    <a class="login bold" href="logged_in.php">Login</a>
-    <a class="button_black_outline" href="#signup_form">Registrieren</a>
+<!--     <a class="login bold" href="logged_in.php">Login</a>
+    <a class="button_black_outline" href="#signup_form">Registrieren</a> -->
+    <% if user_session.logged_in? %>
+      <a class="login bold" href=<%= url_for(controller: "bss", action: "favorites") %>><i class="fa fa-heart red"></i>&nbsp;&nbsp;Merkliste</a>
+      <a class="login bold" href=<%= url_for(controller: "bss", action: "logout") %>>Logout</a> 
+    <% else %>
+      <a class="login bold" href=<%= url_for(controller: "bss", action: "login") %>>Login</a> 
+      <a class="button_black_outline" href=<%= url_for(anchor: "signup_form") %>>Registrieren</a>
+    <% end %>
   </div>
 
   <div class="logo_wrap">

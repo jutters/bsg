@@ -1,5 +1,5 @@
 <!-- FILTER -->
-<%= form_tag url_for(:controller => 'bss', :action => 'update_shop_filter'), :method => 'get' do %>
+<%= form_tag url_for(:controller => 'bss', :action => 'update_shop_filter_settings'), :method => 'get' do %>
 
 <section class="filter">
   <ul>
@@ -12,7 +12,6 @@
           <li>
               <%= hidden_field_tag "shop_filter_settings[price_segment_low]", false %>
               <%= check_box_tag "shop_filter_settings[price_segment_low]", true, params[:shop_filter_settings][:price_segment_low] %>
-              €
               <i class="fa fa-eur"></i>
               <i class="fa fa-eur inactive"></i>
               <i class="fa fa-eur inactive"></i>
@@ -21,8 +20,7 @@
           <li>
               <%= hidden_field_tag "shop_filter_settings[price_segment_middle]", false %>
               <%= check_box_tag "shop_filter_settings[price_segment_middle]", true, params[:shop_filter_settings][:price_segment_middle] %>
-              €€
-              <i class="fa fa-eur"></i>
+              <i class="fa fa-eur inactive"></i>
               <i class="fa fa-eur"></i>
               <i class="fa fa-eur inactive"></i>
           </li>
@@ -30,9 +28,8 @@
           <li>
               <%= hidden_field_tag "shop_filter_settings[price_segment_high]", false %>
               <%= check_box_tag "shop_filter_settings[price_segment_high]", true, params[:shop_filter_settings][:price_segment_high] %>
-              €€€
-              <i class="fa fa-eur"></i>
-              <i class="fa fa-eur"></i>
+              <i class="fa fa-eur inactive"></i>
+              <i class="fa fa-eur inactive"></i>
               <i class="fa fa-eur"></i>
           </li>
           

@@ -1,10 +1,30 @@
 Rails.application.routes.draw do
+
+  get 'admin' => 'admin#index'
+
+  resources :users
+  resources :shops
+  resources :shop_favorites do
+    member do
+      post 'toggle'
+    end
+  end
+
+  controller :user_sessions do
+    get 'login' => :new
+    post 'login' => :create
+    get 'logout' => :destroy
+    delete 'logout' => :destroy
+  end
+
+  get 'bss' => 'bss#men'
   get 'bss/men'
   get 'bss/women'
   get 'bss/interior'
-  get 'bss/update_shop_filter'
-
-  resources :shops
+  get 'bss/update_shop_filter_settings'
+  get 'bss/favorites'
+  get 'bss/login'
+  get 'bss/logout'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

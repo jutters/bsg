@@ -50,11 +50,11 @@
         <a href="http://<%= shop.site_url %>" target="_blank" class="button_white_outline shop_link">Zum Shop</a>
         <!--<a href="#" class="button_white_outline mark_link"><i class="fa fa-heart-o"></i>&nbsp;&nbsp;Merken</a>-->
         <% if shop.is_user_favorite(user_session.get_logged_in_user) %> 
-          <%= link_to("", toggle_shop_favorite_path(shop), class: "button_white_outline mark_link marked", method: :post) do %>
+          <%= link_to(toggle_shop_favorite_path(shop), class: "button_white_outline mark_link marked", method: :post) do %>
             <i class="fa fa-heart"></i>&nbsp;&nbsp;Merken
           <% end %>
         <% else %>
-          <%= link_to("", toggle_shop_favorite_path(shop), class: "button_white_outline mark_link", method: :post) do %>
+          <%= link_to(toggle_shop_favorite_path(shop), class: "button_white_outline mark_link", method: :post) do %>
             <i class="fa fa-heart-o"></i>&nbsp;&nbsp;Merken
           <% end %>
         <% end% %>

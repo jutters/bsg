@@ -20,7 +20,8 @@ source 'https://rubygems.org' do
 	gem 'coffee-rails', '~> 4.0.0'
 
 	# use Font Awesame as font and css toolkit
-	gem 'font-awesome-sass'
+	gem 'font-awesome-rails'
+	#gem 'font-awesome-sass'
 
 	# Use jquery as the JavaScript library
 	gem 'jquery-rails'

@@ -65,6 +65,27 @@ public
     end    
   end
 
+  def get_locale_string()
+    if self.locale_de_shop
+      return "Deutscher Shop"
+    end
+    if self.locale_foreign_shop_de_website
+      return "Englischsprachiger Shop mit deutscher Website"
+    end
+    if self.locale_foreign_shop_de_delivery
+      return "Englischsprachiger Shop mit Versand nach Deutschland"
+    end
+  end
+
+  def get_brand_type_string()
+    if self.brand_type_single
+      return "Shop mit einer Marke"
+    end
+    if self.brand_type_multi
+      return "Shop mit vielen Marken"
+    end
+  end
+
 private
 
   # ensure there are no favorites referencing this shop

@@ -16,30 +16,30 @@
 	overflow:hidden;
 
 	.shops{
-		padding: 40px 20px;
+		padding: 30px 15px;
 		margin:0 auto;
 		overflow:hidden;
 		text-align:center;
 
 		.signup_box{
-			width: 380px;
-			height: 380px;
-			padding: 160px 20px 0px 20px;
+			width: 285px;
+			height: 285px;
+			padding: 120px 15px 0px 15px;
 			background: image-url('insider_shop_bg.png') center center;
 			background-size: cover;
-			margin: 10px;
+			margin: 8px;
 			position:relative;
 			float: left;
 
 			.headline_wrap{
 				.number{
-					font-size: 30px;
+					font-size: 23px;
 					text-transform: uppercase;
 					@include bold;
-					margin-bottom: 10px;
+					margin-bottom: 8px;
 				}
 				.headline{
-					font-size: 20px;
+					font-size: 15px;
 					text-transform: uppercase;
 					@include bold;
 				}
@@ -49,32 +49,34 @@
 				width: 100%;
 			}
 			.subline{
-				margin-top: 120px;
+				position: absolute;
+				bottom: 10px;
+				width: 90%;
 			}
 
 		}
 
 		.shop{
-			width: 380px;
-			height: 380px;
-			padding: 20px 10px 0px 10px;
+			width: 285px;
+			height: 285px;
+			padding: 10px 8px 0px 8px;
 			background-color: $black;
 			cursor: pointer;
-			margin: 10px;
+			margin: 8px;
 			position:relative;
 			text-align: center;
 			float: left;
 
 			.shop_name{
-				font-size: 20px;
+				font-size: 15px;
 				color: $white;
 				text-transform: uppercase;
-				margin-bottom: 5px;
+				margin-bottom: 2px;
 			}
 
 			.info{
-				width: 360px;
-				height: 60px;
+				width: 270px;
+				height: 45px;
 				position: absolute;
 				bottom:10px;
 				z-index: 10;
@@ -82,10 +84,10 @@
 				padding: 2px;
 				
 				.team_thumb{
-					width: 56px;
-					height: 56px;
+					width: 42px;
+					height: 42px;
 					float: left;
-					margin-right: 12px;
+					margin-right: 5px;
 
 					&.team_member_1{
 					background: image-url('members/team_membder_thumb_1.jpg') center center no-repeat;
@@ -99,28 +101,33 @@
 				}
 
 				.copy{
+					width: 219px;
 					float: left;
 					text-align: left;
 					.text{
-						margin-top: 10px;
-						margin-bottom: 5px;
+						margin-top: 2px;
+						margin-bottom: 2px;
 					}
 					.name{
-						font-size: 13px;
+						font-size: 10px;
 					}
 				}
 			}
 
 			.thumb{
-				width: 340px;
-				height: 310px;
+				width: 255px;
+				height: 233px;
 				position: absolute;
-				left: 20px;
+				left: 15px;
 				bottom:0;
 
+				.img {
+					height: 233px;
+				}
+
 				.overlay{
-					width: 340px;
-					height: 310px;	
+					width: 255px;
+					height: 233px;	
 					background: image-url('shop_overlay.png') center center;
 					position:absolute;
 					bottom:0;
@@ -128,7 +135,7 @@
 					i{
 						position:absolute;
 						top: 0;
-						right: 10px;
+						right: 8px;
 					}
 				}
 
@@ -155,7 +162,7 @@
 					position: absolute;
 					right: 5px;
 					top: 5px;
-					font-size: 14px;
+					font-size: 12px;
 					color: $red;
 					z-index: 10;
 				}
@@ -178,12 +185,12 @@
 				position:absolute;
 				top: 0;
 				left:0;
-				padding: 17px 30px 0px 30px;
-				font-size: 20px;
-				line-height: 26px;
+				padding: 13px 23px 0px 23px;
+				font-size: 15px;
+				line-height: 20px;
 				z-index: 100;
-				width: 380px;
-				height: 380px;
+				width: 285px;
+				height: 285px;
 				color: $white;
 				background: image-url('shop_hover.png') center center repeat-x;
 				transition: opacity 0.35s;
@@ -195,11 +202,11 @@
 				li{
 					@include regular;
 					text-align: center;
-					margin-bottom: 22px;
+					margin-bottom: 17px;
 				}
 
 				.icon_wrap{
-					margin: 50px auto 30px auto;
+					margin: 30px auto 20px auto;
 					display: table;
 
 					.icon{
@@ -228,13 +235,13 @@
 
 				.buttons{
 					position:absolute;
-					bottom:30px;
+					bottom:20px;
 
 					a{	
-						width: 150px;
+						width: 113px;
 						color: $white;
 						background-color: transparent;
-						font-size: 14px !important;
+						font-size: 11px !important;
 
 						&.shop_link{
 							margin-right: 20px;

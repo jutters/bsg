@@ -14,36 +14,15 @@
       <p class="shop_name"><%= shop.name %></p>
       <ul>
         <li class="icon_wrap">
-          
           <div class="icon <% if !shop.price_segment_low %>inactive<% end %>"><i class="fa fa-eur"></i></div>
           <div class="icon <% if !shop.price_segment_middle %>inactive<% end %>"><i class="fa fa-eur"></i></div>
           <div class="icon <% if !shop.price_segment_high %>inactive<% end %>"><i class="fa fa-eur"></i></div>
-          
-          <li>Price-Type: 
-            <%= shop.price_segment_low %>
-            <%= shop.price_segment_middle %>
-            <%= shop.price_segment_high %>
-          </li>
-          <li>Locale: 
-            <%= shop.locale_de_shop %>
-            <%= shop.locale_foreign_shop_de_website %>
-            <%= shop.locale_foreign_shop_de_delivery %>
-          </li>
-          <li>Brand-Type: 
-            <%= shop.brand_type_single %>
-            <%= shop.brand_type_multi %>
-          </li>
-          <li>Shop-Type: 
-            <%= shop.shop_type_men_fashion %>
-            <%= shop.shop_type_women_fashion %>
-            <%= shop.shop_type_interior_design %>
-          </li>
-          <li>Insider tip:
-            <%= shop.insider_tip %>
-          </li>
-          <li>Favorite:
-            <%= shop.is_user_favorite(user_session.get_logged_in_user) %>
-          </li>
+        </li>
+        <li>
+          <%= shop.get_locale_string(); %>
+        </li>
+        <li>
+          <%= shop.get_brand_type_string(); %>
         </li>
       </ul>
       <div class="buttons">
@@ -71,16 +50,18 @@
   <p class="shop_name"><%= shop.name %></p>
   <p class="insider_tipp">Insidertipp</p>  
   <!-- INFO BLOCK -->
-  <div class="info">
-    <div class="team_thumb team_member_3"></div>
-    <div class="copy">
-      <p class="text"><%= truncate(sanitize(shop.comment), length: 40) %></p>
-      <p class="name">Empfehlung von <span class="bold">User XY</span></p>
+  <% if !shop.comment.blank? %>
+    <div class="info">
+      <div class="team_thumb team_member_3"></div>
+      <div class="copy">
+        <p class="text"><%= truncate(sanitize(shop.comment), length: 33) %></p>
+        <p class="name">Empfehlung von <span class="bold">User XY</span></p>
+      </div>
     </div>
-  </div>  
+  <% end %>  
   <div class="thumb">
     <div class="overlay"></div>
-    <%= image_tag shop.image_url(:thumb_tile).to_s %>    
+    <%= image_tag(shop.image_url(:thumb_tile).to_s, width: "255") %>
     <!--%= image_tag('shops/' + shop.image_url, class: 'shop_thumb') %>-->
     <!--%= image_tag "shops/shop_thumb_1.jpg" %> -->
     <!--img src="shops/shop_thumb_1.jpg"> -->
